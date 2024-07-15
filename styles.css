@@ -1,0 +1,66 @@
+:root {
+  --body-background: #e5e5e5;
+  --container-general-background: #8a8a8a;
+  --container-texto-encriptado: #cdcdcd;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  padding: 4rem;
+  background-color: var(--body-background);
+  width: 100vw;
+  height: 100vh;
+}
+.container__general {
+  padding: 4rem;
+  height: 100%;
+  width: auto;
+  background-color: var(--container-general-background);
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+}
+
+textarea {
+  width: 100%;
+  height: 75%;
+}
+.container__botones {
+  padding: 2rem 0;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.container__texto__a__encriptar {
+  width: 65%;
+  background-color: var(--body-background);
+}
+.container__texto__encriptado {
+  width: 35%;
+  background-color: var(--body-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.texto__encriptado {
+  background-color: var(--container-texto-encriptado);
+  width: 100%;
+  height: 75%;
+}
+.boton__encriptar {
+  text-align: center;
+  padding: 0.4rem 3rem;
+}
+.boton__desencriptar {
+  text-align: center;
+  padding: 0.4rem 3rem;
+}
+.boton__copiar {
+  margin-top: 2rem;
+  padding: 0.4rem 3rem;
+}
