@@ -42,6 +42,11 @@ textarea {
   background-color: var(--container-general-background);
   border: none;
   resize: none;
+  padding: 1rem;
+  font-size: 1rem;
+}
+button {
+  cursor: pointer;
 }
 /*--------------------------------*/
 .warning {
@@ -86,6 +91,9 @@ textarea {
   background-color: var(--container-texto-encriptado);
   width: 100%;
   height: 75%;
+  color: black;
+  font-size: 1rem;
+  padding: 1rem;
 }
 .boton__encriptar {
   width: 50%;
@@ -115,7 +123,28 @@ textarea {
   font-size: 1rem;
   background-color: var(--container-texto-encriptado);
 }
-
+.mensaje__caja__vacia {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  text-align: center;
+}
+.mensaje__caja__vacia h3 {
+  font-size: medium;
+  margin: 0.8rem 0;
+}
+.mensaje__caja__vacia p {
+  font-size: small;
+}
+.imagen__caja__vacia {
+  width: 50%;
+  height: auto;
+}
+/*--------------------------MEDIA QUERYS------------------*/
 @media (max-width: 640px) {
   body {
     padding: 0;
@@ -162,6 +191,7 @@ textarea {
     font-size: 0.7rem;
   }
 }
+/*--------------------------MEDIA QUERYS------------------*/
 @media (max-width: 768px) {
   body {
     padding: 0;
@@ -195,7 +225,11 @@ textarea {
   .boton__copiar {
     margin-bottom: 1.5rem;
   }
+  .mensaje__caja__vacia {
+    margin: 3rem 0;
+  }
 }
+/*--------------------------MEDIA QUERYS------------------*/
 @media (max-width: 1024px) {
   .container__general {
     padding: 2rem;

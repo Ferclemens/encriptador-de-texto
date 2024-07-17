@@ -14,19 +14,25 @@
             <img class="logo" src="./assets/Logo.svg" alt="logo Alura Latam">
         </div>
         <div class="container__texto__a__encriptar">
-            <textarea name="texto" id="texto" placeholder="Ingrese el texto a encriptar..."></textarea>
+            <textarea name="texto" id="texto_a_encriptar" placeholder="Ingrese el texto a encriptar..."></textarea>
             <div class="warning">
                 <img src="./assets/warning.png" alt="simbolo de exclamación">
                 <p>Solo letras minúsculas y sin acentos</p>
             </div>
             <div class="container__botones">
-                <button class="boton__encriptar">Encriptar</button>
-                <button class="boton__desencriptar">Desencriptar</button>
+                <button id="boton_encriptar" onclick="setearTextoEncriptado()"
+                    class="boton__encriptar">Encriptar</button>
+                <button id="boton_desencriptar" class="boton__desencriptar">Desencriptar</button>
             </div>
         </div>
         <div class="container__texto__encriptado">
-            <p class="texto__encriptado" name="texto-encriptado" id="texto-encriptado"></p>
-            <button class="boton__copiar">Copiar</button>
+            <p class="texto__encriptado" id="texto_encriptado" name="texto-encriptado" hidden></p>
+            <div class="mensaje__caja__vacia">
+                <img class="imagen__caja__vacia" id="img_caja_vacia" src="./assets/Muñeco.svg" alt="persona con lupa">
+                <h3 id="titulo_caja_vacia">Ningún mensaje fue encontrado</h3>
+                <p id="descripcion_caja_vacia">Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+            <button class="boton__copiar" id="boton_copiar" hidden>Copiar</button>
         </div>
     </section>
     <script src="encriptador.js"></script>
