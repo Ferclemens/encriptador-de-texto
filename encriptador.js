@@ -47,7 +47,6 @@ function encriptar() {
   console.log(textoEncriptado);
   return textoEncriptado;
 }
-//encriptar("Héllo World!");
 
 //obtiene el contenido del <textarea>
 function obtenerTexto() {
@@ -62,9 +61,12 @@ function setearTextoEncriptado() {
   imagenCajaVaciaEl.hidden = true;
   tituloCajaVaciaEl.hidden = true;
   descripcionCajaVaciaEl.hidden = true;
-  console.log(
-    "txt encriptado",
-    (textoEncriptadoEl.textContent = textoEncriptado)
-  );
   return (textoEncriptadoEl.textContent = textoEncriptado);
+}
+
+//copiar texto
+async function copiarTexto() {
+  let texto = textoEncriptadoEl.textContent;
+  console.log("texto a copiar", texto);
+  await navigator.clipboard.writeText(texto);
 }
