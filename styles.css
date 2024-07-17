@@ -10,7 +10,7 @@
 }
 
 body {
-  padding: 4rem;
+  padding: 1rem;
   background-color: var(--body-background);
   width: 100vw;
   height: 100vh;
