@@ -8,10 +8,12 @@ let imagenCajaVaciaEl = document.getElementById("img_caja_vacia");
 let tituloCajaVaciaEl = document.getElementById("titulo_caja_vacia");
 let descripcionCajaVaciaEl = document.getElementById("descripcion_caja_vacia");
 
+// llaves de encriptación
+const llave = ["ai", "enter", "imes", "ober", "ufat"];
+
 function encriptar() {
-  let textoAEncriptar = obtenerTexto();
-  // llaves de encriptación
-  const llave = ["ai", "enter", "imes", "ober", "ufat"];
+  let textoAEncriptar = obtenerTextoAEncriptar();
+
   // separa y cambia letras a minúscula.
   let arrayDeLetras = textoAEncriptar.toLowerCase().split("");
 
@@ -44,14 +46,20 @@ function encriptar() {
     }
   }
   let textoEncriptado = arrayDeLetras.join("");
-  console.log(textoEncriptado);
+  //console.log(textoEncriptado);
   return textoEncriptado;
 }
 
-//obtiene el contenido del <textarea>
-function obtenerTexto() {
+//obtiene el contenido del texto a encriptar
+function obtenerTextoAEncriptar() {
   let textoAEncriptar = textoAEncriptarEl.value;
   return textoAEncriptar;
+}
+
+//obtiene el contenido del texto encriptado
+function obtenerTextoEncriptado() {
+  let textoEncriptado = textoEncriptadoEl.textContent;
+  return textoEncriptado;
 }
 
 function setearTextoEncriptado() {
@@ -67,6 +75,23 @@ function setearTextoEncriptado() {
 //copiar texto
 async function copiarTexto() {
   let texto = textoEncriptadoEl.textContent;
-  console.log("texto a copiar", texto);
+  //console.log("texto a copiar", texto);
   await navigator.clipboard.writeText(texto);
+}
+
+function desencriptar() {
+  let textoADesencriptar = obtenerTextoEncriptado();
+  //console.log(textoADesencriptar);
+  let textoDesencriptado = textoADesencriptar
+    .replaceAll(llave[0], "a")
+    .replaceAll(llave[1], "e")
+    .replaceAll(llave[2], "i")
+    .replaceAll(llave[3], "o")
+    .replaceAll(llave[4], "u");
+  console.log("texto desencriptado", textoDesencriptado);
+  return textoDesencriptado;
+}
+function setearTextoDesencriptado() {
+  let textoDesencriptado = desencriptar();
+  return (textoEncriptadoEl.textContent = textoDesencriptado);
 }
