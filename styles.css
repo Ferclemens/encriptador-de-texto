@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 :root {
-  --body-background: #0a3871;
-  --container-general-background: #d8dfe8;
-  --container-texto-encriptado: #ffffff;
+  --color-contraste: #0a3871;
+  --color-claro-1: #c6d9e2;
+  --color-claro-2: #ffffff;
+  --color-hover: #3578c8;
+  --texto-claro: whitesmoke;
+  --texto-oscuro: black;
 }
 
 * {
@@ -11,9 +16,10 @@
 
 body {
   padding: 1rem;
-  background-color: var(--body-background);
+  background-color: var(--color-contraste);
   width: 100vw;
   height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 .container__logo {
   position: absolute;
@@ -29,7 +35,7 @@ body {
   padding: 4rem;
   height: 100%;
   width: auto;
-  background-color: var(--container-general-background);
+  background-color: var(--color-claro-1);
   display: flex;
   gap: 2rem;
   justify-content: space-around;
@@ -39,7 +45,7 @@ body {
 textarea {
   width: 100%;
   height: 60%;
-  background-color: var(--container-general-background);
+  background-color: var(--color-claro-1);
   border: none;
   resize: none;
   padding: 1rem;
@@ -56,7 +62,7 @@ button {
   gap: 0.3rem;
   position: absolute;
   left: 0.5rem;
-  top: 73%;
+  top: 78%;
   font-size: small;
   align-items: center;
 }
@@ -70,7 +76,7 @@ button {
 }
 .container__texto__a__encriptar {
   width: 50%;
-  background-color: var(--container-general-background);
+  background-color: var(--color-claro-1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,7 +85,7 @@ button {
 }
 .container__texto__encriptado {
   width: 50%;
-  background-color: var(--container-texto-encriptado);
+  background-color: var(--color-claro-2);
   border-radius: 1rem;
   overflow: hidden;
   display: flex;
@@ -88,7 +94,7 @@ button {
   align-items: center;
 }
 .texto__encriptado {
-  background-color: var(--container-texto-encriptado);
+  background-color: var(--color-claro-2);
   width: 100%;
   height: 75%;
   color: black;
@@ -99,29 +105,43 @@ button {
   width: 50%;
   text-align: center;
   padding: 1rem 2rem;
-  background-color: var(--body-background);
+  background-color: var(--color-contraste);
   border-radius: 1.5rem;
-  color: whitesmoke;
+  color: var(--texto-claro);
   border: none;
   font-size: 1rem;
+  transition: 0.3s;
+}
+.boton__encriptar:hover {
+  background-color: var(--color-hover);
+  border: 1px solid var(--color-contraste);
 }
 .boton__desencriptar {
   width: 50%;
   text-align: center;
   padding: 1rem 2rem;
   border-radius: 1.5rem;
-  border: 1px solid var(--body-background);
-  color: var(--body-background);
+  background-color: var(--color-claro-2);
+  border: 1px solid var(--color-contraste);
+  color: var(--color-contraste);
   font-size: 1rem;
+}
+.boton__desencriptar:hover {
+  background-color: var(--color-hover);
+  color: var(--texto-claro);
 }
 .boton__copiar {
   margin: 1rem;
   padding: 1rem 4rem;
   border-radius: 1.5rem;
-  border: 1px solid var(--body-background);
-  color: var(--body-background);
+  border: 1px solid var(--color-contraste);
+  color: var(--color-contraste);
   font-size: 1rem;
-  background-color: var(--container-texto-encriptado);
+  background-color: var(--color-claro-2);
+}
+.boton__copiar:hover {
+  background-color: var(--color-hover);
+  color: var(--texto-claro);
 }
 .mensaje__caja__vacia {
   width: 90%;
@@ -144,18 +164,28 @@ button {
   width: 50%;
   height: auto;
 }
+.footer {
+  position: absolute;
+  bottom: 2%;
+  left: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: var(--texto-oscuro);
+}
+.footer__links {
+  display: flex;
+  gap: 1.5rem;
+}
 /*--------------------------MEDIA QUERYS------------------*/
 @media (max-width: 640px) {
   body {
     padding: 0;
-    background-color: var(--body-background);
-    width: 100vw;
-    height: 100vh;
   }
   .container__general {
     height: 100%;
     width: auto;
-    background-color: var(--container-general-background);
     display: flex;
     gap: 1rem;
     justify-content: space-around;
@@ -190,6 +220,9 @@ button {
     top: 38%;
     font-size: 0.7rem;
   }
+  .footer {
+    margin-left: 2.2rem;
+  }
 }
 /*--------------------------MEDIA QUERYS------------------*/
 @media (max-width: 768px) {
@@ -209,9 +242,6 @@ button {
   textarea {
     width: 100%;
     height: 50%;
-    background-color: var(--container-general-background);
-    border: none;
-    resize: none;
   }
   .warning {
     left: 2.5rem;
@@ -228,12 +258,28 @@ button {
   .mensaje__caja__vacia {
     margin: 3rem 0;
   }
+  .footer {
+    bottom: 1%;
+    left: 6%;
+    gap: 1rem;
+    font-size: small;
+  }
+  .footer__links {
+    gap: 1rem;
+  }
+  .logo__github {
+    height: 1rem;
+  }
+  .logo__linkedin {
+    height: 0.95rem;
+  }
 }
 /*--------------------------MEDIA QUERYS------------------*/
 @media (max-width: 1024px) {
   .container__general {
     padding: 2rem;
-    gap: 0.5rem;
+    gap: 0.2rem;
+    border-radius: 0rem;
   }
   .boton__encriptar {
     padding: 0.4rem 1rem;

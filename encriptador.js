@@ -61,7 +61,7 @@ function obtenerTextoEncriptado() {
   let textoEncriptado = textoEncriptadoEl.textContent;
   return textoEncriptado;
 }
-
+//muestra el texto encriptado en la ui
 function setearTextoEncriptado() {
   let textoEncriptado = encriptar();
   textoEncriptadoEl.hidden = false;
@@ -91,6 +91,7 @@ function desencriptar() {
   console.log("texto desencriptado", textoDesencriptado);
   return textoDesencriptado;
 }
+//muestra el texto desencriptado en la ui
 function setearTextoDesencriptado() {
   let textoDesencriptado = desencriptar();
   return (textoEncriptadoEl.textContent = textoDesencriptado);
