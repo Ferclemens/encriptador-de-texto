@@ -221,7 +221,7 @@ button {
     font-size: 0.7rem;
   }
   .footer {
-    margin-left: 2.2rem;
+    margin-left: 3.5rem;
   }
 }
 /*--------------------------MEDIA QUERYS------------------*/
@@ -232,12 +232,6 @@ button {
   .container__general {
     padding: 1rem;
     gap: 1rem;
-  }
-  .container__botones {
-    padding: 0.5rem;
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
   }
   textarea {
     width: 100%;
@@ -267,19 +261,18 @@ button {
   .footer__links {
     gap: 1rem;
   }
-  .logo__github {
-    height: 1rem;
-  }
-  .logo__linkedin {
-    height: 0.95rem;
-  }
 }
 /*--------------------------MEDIA QUERYS------------------*/
 @media (max-width: 1024px) {
   .container__general {
     padding: 2rem;
     gap: 0.2rem;
-    border-radius: 0rem;
+  }
+  .container__botones {
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
   }
   .boton__encriptar {
     padding: 0.4rem 1rem;
@@ -298,5 +291,15 @@ button {
   .logo {
     width: 3.7rem;
     height: 1rem;
+  }
+  .footer {
+    gap: 1rem;
+    font-size: small;
+  }
+  .logo__github {
+    height: 1rem;
+  }
+  .logo__linkedin {
+    height: 0.95rem;
   }
 }
